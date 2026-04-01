@@ -319,21 +319,22 @@ nav {
 }
 
 .card-info {
-  flex: 0.8; /* Shrunk from 1.0 to 0.8 */
-  padding: 1.8rem 2.2rem;
+  flex: 1; /* Fixed 1:1 ratio */
+  padding: 2.2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .card-preview {
-  flex: 1.4; /* Increased from 1.2 to 1.4 */
+  flex: 1; /* Fixed 1:1 ratio */
   background: #1e293b;
   border-left: 1px solid rgba(255, 255, 255, 0.05);
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  min-height: 100%;
 }
 
 /* Browser Mockup Top Bar */
@@ -359,15 +360,15 @@ nav {
 }
 
 .card-preview iframe {
-  width: 1333px; /* Based on 500px width / 0.375 scale */
-  height: 900px;
-  transform: scale(0.375);
+  width: 1600px; /* Enhanced for 1:1 coverage */
+  height: 1200px;
+  transform: scale(0.4);
   transform-origin: 0 0;
   border: none;
   pointer-events: none;
   opacity: 0.8;
   transition: var(--transition);
-  margin-top: 30px; /* Space for mockup dots */
+  margin-top: 30px;
 }
 
 .idea-card:hover iframe {
@@ -448,10 +449,22 @@ nav {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.seller-info-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+}
+
 .seller-name {
   font-size: 0.85rem;
   color: var(--text-dim);
   text-align: right;
+}
+
+.seller-name strong {
+  color: var(--accent);
+  font-weight: 700;
 }
 
 .btn-execute {
