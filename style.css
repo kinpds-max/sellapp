@@ -384,7 +384,7 @@ nav {
 
 .idea-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns per row */
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for a professional gallery look */
   gap: 2.5rem;
 }
 
@@ -392,26 +392,25 @@ nav {
   position: relative;
   border-radius: var(--radius-lg);
   display: flex;
+  flex-direction: column; /* Unified vertical layout */
   background: rgba(30, 41, 59, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.03);
-  height: auto;
-  min-height: 200px; /* Compact height */
+  height: 520px; /* Fixed height for consistency */
   transition: var(--transition);
   overflow: hidden;
 }
 
 .card-info {
-  flex: 1.1;
-  padding: 1.5rem 1.8rem; /* Reduced padding */
+  padding: 1.8rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  flex-grow: 1;
 }
 
 .card-preview {
-  flex: 0.9;
+  height: 280px; /* Fixed preview height */
   background: #1e293b;
-  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -441,15 +440,16 @@ nav {
 }
 
 .card-preview iframe {
-  width: 1600px; /* Enhanced for 1:1 coverage */
-  height: 1200px;
-  transform: scale(0.4);
+  width: 1400px; 
+  height: 1000px;
+  transform: scale(0.35); /* Tailored for 3-column width */
   transform-origin: 0 0;
   border: none;
   pointer-events: none;
   opacity: 0.8;
   transition: var(--transition);
-  margin-top: 30px;
+  margin-top: 35px;
+  margin-left: 10px;
 }
 
 .idea-card:hover iframe {
