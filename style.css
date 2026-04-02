@@ -443,20 +443,20 @@ nav {
 }
 
 .card-preview iframe {
-  width: 900px; /* Even more compact to force higher detail level */
-  height: 600px;
-  transform: scale(0.68); 
-  transform-origin: 0 0;
+  width: 500px; /* Higher detail base */
+  height: 300px;
+  transform: scale(0.9); /* Extremely detailed thumbnail look */
+  transform-origin: top left;
   border: none;
   pointer-events: none;
   opacity: 1;
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-  margin-top: 5px; /* Higher up */
-  margin-left: 10px;
+  transition: transform 0.4s ease;
+  margin-top: 0;
+  margin-left: 0;
 }
 
 .idea-card:hover iframe {
-  transform: scale(0.7); /* Subtle scale up on hover */
+  transform: scale(0.93); /* Slight zoom for interaction */
 }
 
 /* Immediate presence for loaded iframes */
