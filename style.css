@@ -12,7 +12,7 @@
   
   /* Layout */
   --container-width: 1400px;
-  --container-header: 95%; /* Wider header as requested */
+  --container-header: 95%; 
   --header-height: 80px;
   --radius-lg: 24px;
   --radius-md: 12px;
@@ -402,14 +402,15 @@ nav {
 }
 
 .card-info {
-  padding: 1.8rem;
+  padding: 1.5rem 1.8rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  text-align: center; /* Center text by default */
 }
 
 .card-preview {
-  height: 280px; /* Fixed preview height */
+  height: 220px; /* Reduced to remove gaps */
   background: #1e293b;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   position: relative;
@@ -444,13 +445,13 @@ nav {
 .card-preview iframe {
   width: 900px; /* Even more compact to force higher detail level */
   height: 600px;
-  transform: scale(0.68); /* Increased scale to fill up the frame more */
+  transform: scale(0.68); 
   transform-origin: 0 0;
   border: none;
   pointer-events: none;
   opacity: 1;
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-  margin-top: 35px;
+  margin-top: 5px; /* Higher up */
   margin-left: 10px;
 }
 
@@ -509,17 +510,18 @@ iframe {
 
 .card-header {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  width: 100%;
 }
 
 .card-tag {
   background: rgba(45, 212, 191, 0.1);
   color: var(--accent);
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.8rem; /* Larger padding */
   border-radius: var(--radius-sm);
-  font-size: 0.7rem;
+  font-size: 1rem; /* Enlarge even more */
   font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
