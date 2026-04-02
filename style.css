@@ -11,7 +11,8 @@
   --bg-gradient: radial-gradient(circle at top right, #1E293B, #0F172A);
   
   /* Layout */
-  --container-width: 1280px;
+  --container-width: 1400px;
+  --container-header: 95%; /* Wider header as requested */
   --header-height: 80px;
   --radius-lg: 24px;
   --radius-md: 12px;
@@ -67,6 +68,16 @@ ul {
   padding: 0 2rem;
 }
 
+.container-header {
+  max-width: var(--container-header);
+  margin: 0 auto;
+  padding: 0 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 /* Nav Bar */
 header {
   position: fixed;
@@ -107,8 +118,80 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 2.5rem;
+  gap: 3.5rem; /* Increased gap for a wider feel */
   align-items: center;
+  margin-right: auto;
+  margin-left: 5rem;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Language Selector */
+.lang-selector {
+  position: relative;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+}
+
+.lang-selector:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.lang-selector i {
+  font-size: 0.6rem;
+  transition: transform 0.3s ease;
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: var(--primary-light);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 0.5rem;
+  width: 120px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  z-index: 100;
+}
+
+.lang-selector.active .lang-dropdown {
+  display: flex;
+}
+
+.lang-opt {
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.lang-opt:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+}
+
+.arrow-down {
+  font-size: 0.6rem;
+  margin-left: 5px;
+  color: var(--accent);
+  font-style: normal;
 }
 
 .nav-item {
@@ -300,9 +383,9 @@ nav {
 }
 
 .idea-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns per row */
+  gap: 2.5rem;
 }
 
 .idea-card {
@@ -312,29 +395,27 @@ nav {
   background: rgba(30, 41, 59, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.03);
   height: auto;
-  min-height: 240px;
+  min-height: 200px; /* Compact height */
   transition: var(--transition);
   overflow: hidden;
-  margin-bottom: 2rem;
 }
 
 .card-info {
-  flex: 1; /* Fixed 1:1 ratio */
-  padding: 2.2rem;
+  flex: 1.1;
+  padding: 1.5rem 1.8rem; /* Reduced padding */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .card-preview {
-  flex: 1; /* Fixed 1:1 ratio */
+  flex: 0.9;
   background: #1e293b;
   border-left: 1px solid rgba(255, 255, 255, 0.05);
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 100%;
 }
 
 /* Browser Mockup Top Bar */
@@ -429,37 +510,37 @@ nav {
 }
 
 .price-status {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-dim);
-  font-weight: 500;
 }
 
 .price-status strong {
   color: var(--accent);
-  margin-left: 0.5rem;
+  margin-left: 0.4rem;
   font-weight: 800;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .card-footer {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  padding-top: 1.5rem;
+  align-items: center; /* Horizontally aligned */
+  padding-top: 1rem;
+  margin-top: auto;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .seller-info-group {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.2rem;
+  align-items: center;
+  gap: 1.5rem; /* Gap between info and button */
 }
 
 .seller-name {
   font-size: 0.85rem;
   color: var(--text-dim);
   text-align: right;
+  margin-right: 1rem;
 }
 
 .seller-name strong {
@@ -470,16 +551,18 @@ nav {
 .btn-execute {
   background: var(--accent);
   color: var(--primary);
-  padding: 0.8rem 2rem;
+  padding: 0.6rem 1.5rem;
   border-radius: var(--radius-sm);
   font-weight: 800;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(45, 212, 191, 0.2);
 }
 
 .btn-execute:hover {
   filter: brightness(1.1);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(45, 212, 191, 0.3);
 }
 
 .status-badge {

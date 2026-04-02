@@ -11,14 +11,27 @@
 
     <!-- Header Navigation -->
     <header id="header">
-        <div class="container nav">
+        <div class="container-header nav">
             <a href="#" class="brand">sell<span>app</span></a>
             <ul class="nav-links">
                 <li><a href="#marketplace" class="nav-item">마켓플레이스</a></li>
                 <li><a href="#process" class="nav-item">이용방법</a></li>
-                <li><span class="contact-phone">Tel. 1660-1195</span></li>
-                <li><a href="#register" class="auth-btn">무료 등록하기</a></li>
+                <li><a href="#process" class="nav-item">수수료정책</a></li>
+                <li><a href="#register" class="nav-item">판매자 신청</a></li>
             </ul>
+            <div class="nav-actions">
+                <div class="lang-selector" id="lang-selector">
+                    <span id="current-lang">KOR</span>
+                    <i class="arrow-down">▼</i>
+                    <div class="lang-dropdown">
+                        <div class="lang-opt" onclick="setLang('KOR')">한국어 (KOR)</div>
+                        <div class="lang-opt" onclick="setLang('ENG')">English (ENG)</div>
+                        <div class="lang-opt" onclick="setLang('CHN')">中国语 (CHN)</div>
+                    </div>
+                </div>
+                <span class="contact-phone">1660-1195</span>
+                <a href="#register" class="auth-btn">무료 상담 신청</a>
+            </div>
         </div>
     </header>
 
@@ -44,7 +57,7 @@
     <section id="marketplace" class="marketplace-preview">
         <div class="container">
             <div class="section-title">
-                <h2>실시간 추천 매물</h2>
+                <h2>실시간 판매 서비스</h2>
                 <p>지금 바로 구매 가능한 검증된 디지털 자산과 플랫폼 아이디어입니다.</p>
             </div>
 
@@ -65,12 +78,12 @@
                             <span class="card-tag">기업 웹사이트</span>
                         </div>
                         <h3>드림플러스</h3>
-                        <p>소상공인의 성공을 돕는 경영지도컨설팅 전용 시스템입니다.</p>
+                        <p>경영지도컨설팅 전용 시스템입니다.</p>
                         <div class="card-footer">
                             <div class="price-status">희망금액: <strong>협의</strong></div>
                             <div class="seller-info-group">
-                                <a href="https://pf.kakao.com/_YdGxhX" target="_blank" class="btn-execute">구매하기</a>
                                 <div class="seller-name">판매자: <strong>하맘 파트너</strong></div>
+                                <a href="javascript:void(0)" onclick="sendInquiry('드림플러스', 'https://kinpds-max.github.io/dreamplus-consulting/')" class="btn-execute">구매하기</a>
                             </div>
                         </div>
                     </div>
@@ -86,12 +99,12 @@
                             <span class="card-tag">기업 웹사이트</span>
                         </div>
                         <h3>하스놀 (HASNOL)</h3>
-                        <p>하스놀 주식회사 공식 브랜드 웹사이트 솔루션입니다.</p>
+                        <p>주식회사 공식 브랜드 웹사이트 솔루션입니다.</p>
                         <div class="card-footer">
                             <div class="price-status">희망금액: <strong>협의</strong></div>
                             <div class="seller-info-group">
-                                <a href="https://pf.kakao.com/_YdGxhX" target="_blank" class="btn-execute">구매하기</a>
                                 <div class="seller-name">판매자: <strong>하맘 파트너</strong></div>
+                                <a href="javascript:void(0)" onclick="sendInquiry('하스놀', 'https://hasnol.kr/')" class="btn-execute">구매하기</a>
                             </div>
                         </div>
                     </div>
@@ -107,12 +120,12 @@
                             <span class="card-tag">브랜드 몰</span>
                         </div>
                         <h3>하스펫 (HasPet)</h3>
-                        <p>친환경 반려동물 라이프스타일 전문 이커머스 몰입니다.</p>
+                        <p>반려동물 전문 이커머스 몰입니다.</p>
                         <div class="card-footer">
                             <div class="price-status">희망금액: <strong>협의</strong></div>
                             <div class="seller-info-group">
-                                <a href="https://pf.kakao.com/_YdGxhX" target="_blank" class="btn-execute">구매하기</a>
                                 <div class="seller-name">판매자: <strong>하맘 파트너</strong></div>
+                                <a href="javascript:void(0)" onclick="sendInquiry('하스펫', 'http://www.haspet.kr/')" class="btn-execute">구매하기</a>
                             </div>
                         </div>
                     </div>
@@ -128,12 +141,12 @@
                             <span class="card-tag">매칭 플랫폼</span>
                         </div>
                         <h3>매트허브</h3>
-                        <p>업체와 고객을 실시간으로 연결하는 통합 매칭 플랫폼입니다.</p>
+                        <p>실시간 통합 매칭 플랫폼입니다.</p>
                         <div class="card-footer">
                             <div class="price-status">희망금액: <strong>협의</strong></div>
                             <div class="seller-info-group">
-                                <a href="https://pf.kakao.com/_YdGxhX" target="_blank" class="btn-execute">구매하기</a>
                                 <div class="seller-name">판매자: <strong>하맘 파트너</strong></div>
+                                <a href="javascript:void(0)" onclick="sendInquiry('매트허브', 'https://mathub.kr/')" class="btn-execute">구매하기</a>
                             </div>
                         </div>
                     </div>
@@ -150,12 +163,12 @@
                             <span class="card-tag">소셜/커뮤니티</span>
                         </div>
                         <h3>HolyOn (홀리온)</h3>
-                        <p>인증된 회원들을 위한 크리스찬 전용 데이팅 플랫폼입니다.</p>
+                        <p>크리스찬 전용 데이팅 플랫폼입니다.</p>
                         <div class="card-footer">
                             <div class="price-status">희망금액: <strong>협의</strong></div>
                             <div class="seller-info-group">
-                                <a href="https://pf.kakao.com/_YdGxhX" target="_blank" class="btn-execute">구매하기</a>
                                 <div class="seller-name">판매자: <strong>하맘 파트너</strong></div>
+                                <a href="javascript:void(0)" onclick="sendInquiry('홀리온', 'https://kinpds-max.github.io/holyon/app.html')" class="btn-execute">구매하기</a>
                             </div>
                         </div>
                     </div>
@@ -171,12 +184,12 @@
                             <span class="card-tag">유틸리티/기록</span>
                         </div>
                         <h3>하맘 성경노트 Pro</h3>
-                        <p>스마트 구절 기록 및 관리가 가능한 영성 관리 도구입니다.</p>
+                        <p>스마트 영성 관리 도구입니다.</p>
                         <div class="card-footer">
                             <div class="price-status">희망금액: <strong>협의</strong></div>
                             <div class="seller-info-group">
-                                <a href="https://pf.kakao.com/_YdGxhX" target="_blank" class="btn-execute">구매하기</a>
                                 <div class="seller-name">판매자: <strong>하맘 파트너</strong></div>
+                                <a href="javascript:void(0)" onclick="sendInquiry('하맘 성경노트', 'https://kinpds-max.github.io/hamom-bible-note/')" class="btn-execute">구매하기</a>
                             </div>
                         </div>
                     </div>
@@ -193,12 +206,12 @@
                             <span class="card-tag">지능형 비서</span>
                         </div>
                         <h3>Hamom AI - Chat</h3>
-                        <p>업무 생산성을 극대화하는 멀티모달 AI 업무 보조 시스템입니다.</p>
+                        <p>멀티모달 AI 업무 보조 시스템입니다.</p>
                         <div class="card-footer">
                             <div class="price-status">희망금액: <strong>협의</strong></div>
                             <div class="seller-info-group">
-                                <a href="https://pf.kakao.com/_YdGxhX" target="_blank" class="btn-execute">구매하기</a>
                                 <div class="seller-name">판매자: <strong>하맘 파트너</strong></div>
+                                <a href="javascript:void(0)" onclick="sendInquiry('하맘 AI 챗', 'https://smartkim82.github.io/hamomai/')" class="btn-execute">구매하기</a>
                             </div>
                         </div>
                     </div>
@@ -214,12 +227,12 @@
                             <span class="card-tag">부동산 솔루션</span>
                         </div>
                         <h3>하맘 매물지도 PRO+</h3>
-                        <p>매물 통합 관리 및 필터링을 지원하는 부동산 지도 솔루션입니다.</p>
+                        <p>지능형 부동산 지도 솔루션입니다.</p>
                         <div class="card-footer">
                             <div class="price-status">희망금액: <strong>협의</strong></div>
                             <div class="seller-info-group">
-                                <a href="https://pf.kakao.com/_YdGxhX" target="_blank" class="btn-execute">구매하기</a>
                                 <div class="seller-name">판매자: <strong>하맘 파트너</strong></div>
+                                <a href="javascript:void(0)" onclick="sendInquiry('하맘 매물지도', 'https://smartkim82.github.io/hamommap/')" class="btn-execute">구매하기</a>
                             </div>
                         </div>
                     </div>

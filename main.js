@@ -99,5 +99,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  console.log('Cell App Premium Interactions Loaded Successfully.');
+  // 5. Language Selector Interaction
+  const langSelector = document.getElementById('lang-selector');
+  const currentLang = document.getElementById('current-lang');
+
+  langSelector.addEventListener('click', (e) => {
+    e.stopPropagation();
+    langSelector.classList.toggle('active');
+  });
+
+  document.addEventListener('click', () => {
+    langSelector.classList.remove('active');
+  });
+
+  window.setLang = (lang) => {
+    currentLang.textContent = lang;
+    langSelector.classList.remove('active');
+    console.log(`Language set to: ${lang}`);
+    // Here you would typically trigger a translation engine or redirect
+  };
+
+  console.log('sell app Premium Interactions Loaded Successfully.');
 });
+
+// Inquiry Automation
+function sendInquiry(productName, productLink) {
+    const message = `[구매문의] ${productName}\n제품링크: ${productLink}\n\n위 제품에 대해 구매 문의드립니다.`;
+    
+    // Open the Kakao channel chat
+    window.open('https://pf.kakao.com/_YdGxhX/chat', '_blank');
+    
+    // Note: Pre-filling text in pf.kakao.com/chat URL is not officially supported without SDK.
+    // We inform the user to mention the product.
+    alert(`카카오톡 채팅이 열립니다.\n\n"${productName} 구매 문의입니다"라고 말씀해 주세요!`);
+}
