@@ -402,7 +402,7 @@ nav {
 }
 
 .card-info {
-  padding: 1.2rem 1.5rem; /* Slightly reduced padding */
+  padding: 0.8rem 1.2rem; /* Reduced by ~50% from 1.5rem */
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -535,16 +535,16 @@ iframe {
 }
 
 .idea-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.2rem; /* Reduced from 0.5rem */
+  font-size: 1.4rem; /* Slightly smaller for density */
+  margin-bottom: 0.1rem; /* Reduced further */
   color: #fff;
 }
 
 .idea-card p {
   color: var(--text-dim);
   font-size: 0.95rem;
-  line-height: 1.5;
-  margin-bottom: 0.8rem; /* Reduced from 1.5rem */
+  line-height: 1.4;
+  margin-bottom: 0.4rem; /* Reduced from 0.8rem by 50% */
 }
 
 .card-footer {
