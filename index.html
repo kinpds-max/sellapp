@@ -19,13 +19,7 @@
                 <li><a href="#process" class="nav-item">수수료정책</a></li>
             </ul>
             <div class="nav-actions">
-                <div style="display: flex; align-items: center; gap: 0.8rem; margin: 0 1rem;">
-                    <a href="#" class="nav-item" style="font-size: 0.85rem; color: var(--accent); font-weight: 700;">로그인</a>
-                    <span style="color: rgba(255,255,255,0.1); font-size: 0.7rem;">|</span>
-                    <a href="#" class="nav-item" style="font-size: 0.85rem; color: var(--accent); font-weight: 700;">회원가입</a>
-                </div>
-                <a href="#register" class="auth-btn" style="margin-right: 1.5rem;">상담 신청</a>
-                <div class="lang-selector" id="lang-selector" style="margin-left: 0;">
+                <div class="lang-selector" id="lang-selector" style="margin-right: 1.5rem;">
                     <span id="current-lang">KOR</span>
                     <i class="arrow-down">▼</i>
                     <div class="lang-dropdown">
@@ -34,6 +28,12 @@
                         <div class="lang-opt" onclick="setLang('CHN')">中国语 (CHN)</div>
                     </div>
                 </div>
+                <div style="display: flex; align-items: center; gap: 0.8rem; margin-right: 1.5rem;">
+                    <a href="javascript:void(0)" onclick="handleAuth('LOGIN')" class="nav-item" style="font-size: 0.85rem; color: var(--accent); font-weight: 700;">로그인</a>
+                    <span style="color: rgba(255,255,255,0.1); font-size: 0.7rem;">|</span>
+                    <a href="javascript:void(0)" onclick="handleAuth('SIGNUP')" class="nav-item" style="font-size: 0.85rem; color: var(--accent); font-weight: 700;">회원가입</a>
+                </div>
+                <a href="javascript:void(0)" onclick="sendInquiry('플랫폼 상담','_general')" class="auth-btn">상담 신청</a>
             </div>
         </div>
     </header>

@@ -119,17 +119,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // Here you would typically trigger a translation engine or redirect
   };
 
-  console.log('sell app Premium Interactions Loaded Successfully.');
+  console.log('Sell App Premium Interactions Loaded Successfully.');
 });
+
+// Auth Handlers (Functionality Mock)
+function handleAuth(type) {
+    if (type === 'LOGIN') {
+        alert('로그인 서비스 준비 중입니다.\n관리자 승인 후 이용 가능합니다.');
+    } else if (type === 'SIGNUP') {
+        alert('회원가입은 관리자에게 문의해 주세요.\n(상담 신청 버튼을 이용해 주세요)');
+    }
+}
 
 // Inquiry Automation
 function sendInquiry(productName, productLink) {
-    const message = `[구매문의] ${productName}\n제품링크: ${productLink}\n\n위 제품에 대해 구매 문의드립니다.`;
+    let message = `[구매문의] ${productName}\n제품링크: ${productLink}\n\n위 제품에 대해 구매 문의드립니다.`;
     
+    if (productLink === '_general') {
+        message = `[일반상담] 플랫폼 이용 및 서비스 문의드립니다.`;
+        productName = '일반 플랫폼 상담';
+    }
+
     // Open the Kakao channel chat
     window.open('https://pf.kakao.com/_YdGxhX/chat', '_blank');
     
-    // Note: Pre-filling text in pf.kakao.com/chat URL is not officially supported without SDK.
-    // We inform the user to mention the product.
-    alert(`카카오톡 채팅이 열립니다.\n\n"${productName} 구매 문의입니다"라고 말씀해 주세요!`);
+    alert(`상담 채널이 열립니다.\n\n"${productName} 문의입니다"라고 말씀해 주세요!`);
 }
