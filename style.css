@@ -118,10 +118,11 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 3.5rem; /* Increased gap for a wider feel */
+  gap: 3rem; /* Adjusted for better fit */
   align-items: center;
   margin-right: auto;
-  margin-left: 5rem;
+  margin-left: 4rem;
+  white-space: nowrap; /* Strictly single line */
 }
 
 .nav-actions {
@@ -440,26 +441,25 @@ nav {
 }
 
 .card-preview iframe {
-  width: 1300px; /* Refined for 3-col width */
-  height: 900px;
-  transform: scale(0.4); /* Scaled up slightly for better content visibility */
+  width: 1000px; /* More compact viewport for higher scale */
+  height: 700px;
+  transform: scale(0.6); /* Larger scale for 'fuller' immediate look */
   transform-origin: 0 0;
   border: none;
   pointer-events: none;
-  opacity: 0; /* Changed to 0 for fade-in effect */
-  transition: opacity 0.8s ease;
+  opacity: 1; /* Show immediately as requested */
+  transition: transform 0.3s ease;
   margin-top: 35px;
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
 .idea-card:hover iframe {
-  opacity: 1; /* Strong presence on hover */
-  transform: scale(0.42);
+  transform: scale(0.62);
 }
 
-/* Ensure immediate visible presence for loaded iframes */
-iframe[loading="lazy"] {
-  opacity: 0.9 !important;
+/* Immediate presence for loaded iframes */
+iframe {
+  opacity: 1 !important;
 }
 
 .preview-overlay {
