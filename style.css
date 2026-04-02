@@ -628,9 +628,27 @@ iframe[loading="lazy"] {
 }
 
 /* Responsive */
+@media (max-width: 1200px) {
+  .idea-grid { grid-template-columns: repeat(2, 1fr); }
+  :root { --container-header: 98%; }
+  .nav-links { gap: 2rem; }
+}
+
 @media (max-width: 768px) {
   .hero h1 { font-size: 3rem; }
+  .hero p { font-size: 1.1rem; }
   .nav-links { display: none; }
   .info-grid { grid-template-columns: 1fr; }
   .idea-grid { grid-template-columns: 1fr; }
+  .container-header { padding: 0 1.5rem; }
+  .hero-content { text-align: center; margin: 0 auto; }
+  .cta-group { justify-content: center; }
+  .card-footer { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+  .seller-info-group { width: 100%; justify-content: space-between; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 2.5rem; }
+  .hero-tag { font-size: 0.7rem; letter-spacing: 2px; }
+  .stat-grid { grid-template-columns: 1fr; }
 }
