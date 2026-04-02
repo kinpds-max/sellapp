@@ -436,25 +436,26 @@ nav {
   font-family: 'Outfit', sans-serif;
   font-weight: 800;
   color: var(--accent);
-  font-size: 1.2rem;
-  margin-right: 2rem;
+  font-size: 1.1rem;
+  margin-right: 1.5rem;
+  white-space: nowrap;
 }
 
 .card-preview iframe {
-  width: 1000px; /* More compact viewport for higher scale */
-  height: 700px;
-  transform: scale(0.6); /* Larger scale for 'fuller' immediate look */
+  width: 900px; /* Even more compact to force higher detail level */
+  height: 600px;
+  transform: scale(0.68); /* Increased scale to fill up the frame more */
   transform-origin: 0 0;
   border: none;
   pointer-events: none;
-  opacity: 1; /* Show immediately as requested */
-  transition: transform 0.3s ease;
+  opacity: 1;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
   margin-top: 35px;
   margin-left: 10px;
 }
 
 .idea-card:hover iframe {
-  transform: scale(0.62);
+  transform: scale(0.7); /* Subtle scale up on hover */
 }
 
 /* Immediate presence for loaded iframes */
