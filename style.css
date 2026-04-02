@@ -348,7 +348,7 @@ nav {
 }
 
 .marketplace-preview {
-  padding: 100px 0;
+  padding: 60px 0; /* Reduced from 100px */
 }
 
 /* Marketplace Categories & Filtering */
@@ -396,13 +396,13 @@ nav {
   flex-direction: column; /* Unified vertical layout */
   background: rgba(30, 41, 59, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.03);
-  height: 520px; /* Fixed height for consistency */
+  min-height: 420px; /* Reduced to remove extra gap */
   transition: var(--transition);
   overflow: hidden;
 }
 
 .card-info {
-  padding: 0.8rem 1.2rem; /* Reduced by ~50% from 1.5rem */
+  padding: 0.6rem 1.2rem 0.5rem; /* Even tighter padding */
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -551,8 +551,7 @@ iframe {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 1rem;
-  margin-top: auto;
+  padding: 0.8rem 0 0.5rem; /* Tighter footer padding */
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   flex-wrap: nowrap; /* Force single line */
   gap: 0.5rem;
@@ -622,7 +621,7 @@ iframe {
 
 /* Commission Section Modification */
 .info-section {
-  padding: 140px 0;
+  padding: 80px 0;
   background: radial-gradient(circle at bottom left, #1E293B, #0F172A);
 }
 
